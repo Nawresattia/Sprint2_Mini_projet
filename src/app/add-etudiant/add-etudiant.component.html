@@ -1,0 +1,30 @@
+            <div class="container">
+                 <div>
+                    <h2>Ajouter un Etudiant :</h2>
+            </div>
+             <form >
+                   <div class="col-sm-2 col-md-2 col-lg-2">
+                          <label >ID Etudiant</label>
+                              <input type="text" [(ngModel)]="newEtudiant.idEtudiant"name="idEtudiant" class="form-control">
+                     </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Etudiant</label>
+        <input type="text"[(ngModel)]= "newEtudiant.nomEtudiant" name="nomEtudiant" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prenom etudiant</label>
+        <input type="text" [(ngModel)]= "newEtudiant.prenomEtudiant" name="prenomEtudiant" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date Inscription</label>
+        <input type="date" [(ngModel)]= "newEtudiant.dateInscription" name="dateInscription" class="form-control">
+        </div>
+        <div class="mt-2">
+        <button type="submit" (click)="addEtudiant()" class="btn btn-success">Ajouter</button>
+        <div>
+            <h3>{{ message }}</h3>
+        </div>
+        </div>
+        </form>
+        </div>
+        
