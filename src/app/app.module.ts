@@ -8,6 +8,11 @@ import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateEtudiantComponent } from './update-etudiant/update-etudiant.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { RechercheParClasseComponent } from './recherche-par-classe/recherche-par-classe.component';
+import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.component';
+import { AddClasseComponent } from './add-classe/add-classe.component';
  
 
 
@@ -16,7 +21,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     EtudiantsComponent,
     AddEtudiantComponent,
-    UpdateEtudiantComponent
+    UpdateEtudiantComponent,
+    LoginComponent,
+    ForbiddenComponent,
+    RechercheParClasseComponent,
+    RechercheParNomComponent,
+    AddClasseComponent,
    ],
   imports: [
     BrowserModule,

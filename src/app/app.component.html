@@ -13,26 +13,32 @@
 <li class="nav-item">
 <a class="nav-link" routerLink="/etudiants" >Home</a>
 </li>
+<li class="nav-item">
+    <a *ngIf = "authService.isAdmin()" class="nav-link" routerLink="add-classe">Ajouter un Classe</a>
+  </li>
 <!-- Dropdown -->
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
 Etudiants
 </a>
 <div class="dropdown-menu">
-<a class="dropdown-item" routerLink="/add-etudiant">Ajouter</a>
+    <a *ngIf="authService.isAdmin()" class="dropdown-item"routerLink = "add-etudiant">Ajouter</a>
 <a class="dropdown-item" href="#">Lister</a>
+<a class="dropdown-item" routerLink="/rechercheParClasse">Recherche par Classe</a>
+  <a class="dropdown-item" routerLink="/rechercheParNom">Recherche par Nom</a>
 </div>
 </li>
 </ul>
 <ul class="navbar-nav ml-auto" >
+    <li> <a class="nav-link">{{authService.loggedUser}}</a></li>
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-[username]
+Conexion
 </a>
 <div class="dropdown-menu">
-<a class="dropdown-item" href="#">login</a>
-<a class="dropdown-item" href="#">logout</a>
-<a class="dropdown-item" href="#">Profile</a>
+    <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink = "login">login</a>
+    <a *ngIf="authService.isloggedIn" class="dropdown-item" (click) = "onLogout()">logout</a>
+    <a class="dropdown-item" href="#">Profile</a>
 </div>
 </li>
 </ul>

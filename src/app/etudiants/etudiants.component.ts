@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EtudiantService } from '../etudiant.service';
 import { Etudiant }  from '../model/etudiant.model'; 
+import { AuthService } from '../services/auth.service';
  
 
 
@@ -14,7 +15,7 @@ export class EtudiantsComponent implements OnInit {
   
   etudiants : Etudiant[]; 
   constructor(private etudiantService: EtudiantService,
-    private router :Router, ){
+   public authService : AuthService ){
     //this.etudiants = etudiantService.listeEtudiants();
        
 }

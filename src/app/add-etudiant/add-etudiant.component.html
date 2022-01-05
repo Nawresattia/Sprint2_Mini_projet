@@ -19,6 +19,13 @@
         <label >Date Inscription</label>
         <input type="date" [(ngModel)]= "newEtudiant.dateInscription" name="dateInscription" class="form-control">
         </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Classe</label><br>
+            <select class="browser-default custom-select" id="idClasse" name="idClasse" [(ngModel)]="newIdClasse">
+                <option *ngFor="let classe of classes" [value] = "classe.idClasse"> {{classe.nomClasse}}</option>
+            </select>      
+   
+        </div>
         <div class="mt-2">
         <button type="submit" (click)="addEtudiant()" class="btn btn-success">Ajouter</button>
         <div>

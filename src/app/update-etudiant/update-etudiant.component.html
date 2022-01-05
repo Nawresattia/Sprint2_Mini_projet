@@ -19,6 +19,14 @@
     <label >Date inscription</label>
     <input type="date" [ngModel]="currentEtudiant.dateInscription| date: 'yyyy-MM-dd'"(ngModelChange)=" currentEtudiant.dateInscription= $event" name="dateInscription" class="form-control">
     </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Classe</label><br>
+        
+        <select name="classe" class="form-control form-control-lg" id="idClasse" name="idClasse" [(ngModel)] = "classe.idClasse" >
+            <option *ngFor="let classe of classes" [value] = "classe.idClasse" >{{classe.nomClasse}}</option>
+        </select>
+    </div>
+
     <div class="mt-2">
     <button type="submit" (click)="updateEtudiant()" class="btn btn-success">Modifer</button>
      

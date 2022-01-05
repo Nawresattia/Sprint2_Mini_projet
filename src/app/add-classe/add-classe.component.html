@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Classe  :</h2>
+    </div>
+    <form>
+
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label for="idClasse">ID Classe</label>
+            <input type="text" [(ngModel)] = "newClasse.idClasse" name="idClasse" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label for="nomClasse">Nom Classe</label>
+            <input type="text" [(ngModel)] = "newClasse.nomClasse" name="nomClasse" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label for="nomClasse">parcours du Classe</label>
+            <input type="text" [(ngModel)] = "newClasse.parcours" name="parcours" class="form-control">
+        </div>
+        
+        
+        <div class="col-sm-4 col-md-4 col-lg-4 mt-4">
+            <button type="button" (click)="addClasse()" class="btn btn-success"> Ajouter </button>
+        </div>
+    </form>
+</div>

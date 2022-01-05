@@ -1,0 +1,37 @@
+<div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <label>Classe </label>
+    <select class="form-control form-control-lg" id="idClasse" name="idClasse"[(ngModel)]="idClasse" (change)="onChange()">
+        <option *ngFor="let classe of classes" value="{{classe.idClasse}}">
+        {{classe.nomClasse}}
+        </option>
+    </select>
+</div>
+
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nom Etudiant</th>
+                        <th>prenom Etudiant</th>
+                        <th>Date d'inscription</th>
+                         <th>classe</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let etudiant of etudiantsRecherche">
+                    <tr>
+                        <td>{{etudiant.idEtudiant}}</td>
+                        <td>{{etudiant.nomEtudiant}}</td>
+                        <td>{{etudiant.prenomEtudiant}}</td>
+                        <td>{{etudiant.dateInscription | date: 'dd-MM-yyyy' }}</td>
+                       <td>{{etudiant.classe.nomClasse }}</td>
+                       <td><a class="btn btn-danger" (click)="supprimerEtudiant(etudiant)" *ngIf = "authService.isAdmin()">Supprimer</a></td>
+                        <td><a class="btn btn-primary" [routerLink]="['/updateEtudiant',etudiant.idEtudiant]" *ngIf = "authService.isAdmin()">Modifier</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
